@@ -1,0 +1,21 @@
+{
+  "name": "y",
+  "version": "0.0.1",
+  "description": "blog",
+  "main": "index.js",
+  "authors": {
+    "name": "kslee",
+    "email": "kensei719@naver.com"
+  },
+  "repository": "./y",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/theme-blog": "^2.3.3",
+    "vuepress": "^1.5.3",
+    "vuepress-plugin-sitemap": "^2.3.1"
+  }
+}
