@@ -51,7 +51,7 @@ module.exports = {
             "/studylog/js/Engine",
             "/studylog/js/EventLoop",
             "/studylog/js/ExecutionContext",
-            // "/studylog/js/Scope",
+            "/studylog/js/Scope",
             // "/studylog/js/Hoisting",
             // "/studylog/js/Closure",
             // "/studylog/js/FunctionAndThis",
