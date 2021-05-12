@@ -49,7 +49,12 @@ module.exports = {
           title: 'JavaScript',
           children: [
             "/studylog/js/Engine",
-            "/studylog/js/EventLoop"
+            "/studylog/js/EventLoop",
+            "/studylog/js/ExecutionContext",
+            // "/studylog/js/Scope",
+            // "/studylog/js/Hoisting",
+            // "/studylog/js/Closure",
+            // "/studylog/js/FunctionAndThis",
           ]
         }
       ],
@@ -62,6 +67,7 @@ module.exports = {
   plugins: [
     "@vuepress/plugin-back-to-top", 
     "@vuepress/plugin-medium-zoom",
-    ["sitemap", { hostname: "https://leeks123.github.io/" }]
+    ["sitemap", { hostname: "https://leeks123.github.io/" }],
+    '@vuepress/last-updated'
   ],
 };
