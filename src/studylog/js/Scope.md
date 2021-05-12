@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: hello
+    content: 자바스크립트 스코프
   - name: keywords
     content: 자바스크립트스코프 스코프체인 렉시컬스코프 함수스코프 블록스코프 IIFE
 tags:

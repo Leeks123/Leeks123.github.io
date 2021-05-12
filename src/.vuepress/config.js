@@ -52,7 +52,7 @@ module.exports = {
             "/studylog/js/EventLoop",
             "/studylog/js/ExecutionContext",
             "/studylog/js/Scope",
-            // "/studylog/js/Hoisting",
+            "/studylog/js/Hoisting",
             // "/studylog/js/Closure",
             // "/studylog/js/FunctionAndThis",
           ]
