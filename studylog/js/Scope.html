@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>스코프 | Dev.ian</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    
+    <meta name="description" content="자바스크립트 스코프">
+    <meta name="keywords" content="자바스크립트스코프 스코프체인 렉시컬스코프 함수스코프 블록스코프 IIFE">
+    <meta name="theme-color" content="#cccccc">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="preload" href="/assets/css/0.styles.1cd9f363.css" as="style"><link rel="preload" href="/assets/js/app.5b500d26.js" as="script"><link rel="preload" href="/assets/js/2.07a342a2.js" as="script"><link rel="preload" href="/assets/js/28.de951b5d.js" as="script"><link rel="prefetch" href="/assets/js/10.d7caea89.js"><link rel="prefetch" href="/assets/js/11.a9c60141.js"><link rel="prefetch" href="/assets/js/12.3215832b.js"><link rel="prefetch" href="/assets/js/13.77e81470.js"><link rel="prefetch" href="/assets/js/14.c5494c3a.js"><link rel="prefetch" href="/assets/js/15.267eb106.js"><link rel="prefetch" href="/assets/js/16.3572a8fc.js"><link rel="prefetch" href="/assets/js/17.55cf45bc.js"><link rel="prefetch" href="/assets/js/18.7e5247da.js"><link rel="prefetch" href="/assets/js/19.b3c45061.js"><link rel="prefetch" href="/assets/js/20.a04171bc.js"><link rel="prefetch" href="/assets/js/21.5968fd04.js"><link rel="prefetch" href="/assets/js/22.662449a0.js"><link rel="prefetch" href="/assets/js/23.f0abdcd1.js"><link rel="prefetch" href="/assets/js/24.1c672e0d.js"><link rel="prefetch" href="/assets/js/25.2df6ed16.js"><link rel="prefetch" href="/assets/js/26.379fdf3a.js"><link rel="prefetch" href="/assets/js/27.c5b434ef.js"><link rel="prefetch" href="/assets/js/29.1a6bf536.js"><link rel="prefetch" href="/assets/js/3.582ed51b.js"><link rel="prefetch" href="/assets/js/30.d64bcea0.js"><link rel="prefetch" href="/assets/js/31.aa5d0f58.js"><link rel="prefetch" href="/assets/js/32.6a422479.js"><link rel="prefetch" href="/assets/js/33.016ed489.js"><link rel="prefetch" href="/assets/js/34.2f481660.js"><link rel="prefetch" href="/assets/js/35.e1831ce9.js"><link rel="prefetch" href="/assets/js/36.6136e221.js"><link rel="prefetch" href="/assets/js/37.ab0d0508.js"><link rel="prefetch" href="/assets/js/4.10ede5db.js"><link rel="prefetch" href="/assets/js/5.8ec2bf9d.js"><link rel="prefetch" href="/assets/js/6.413934d0.js"><link rel="prefetch" href="/assets/js/7.5315ef22.js"><link rel="prefetch" href="/assets/js/8.d28c0c3f.js"><link rel="prefetch" href="/assets/js/9.e5e339ff.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1cd9f363.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Dev.ian</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/studylog/" class="nav-link router-link-active">
+  StudyLog
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="https://github.com/Leeks123" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/studylog/" class="nav-link router-link-active">
+  StudyLog
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="https://github.com/Leeks123" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JavaScript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/studylog/js/Engine.html" class="sidebar-link">자바스크립트 엔진</a></li><li><a href="/studylog/js/EventLoop.html" class="sidebar-link">자바스크립트 런타임</a></li><li><a href="/studylog/js/ExecutionContext.html" class="sidebar-link">실행컨텍스트</a></li><li><a href="/studylog/js/Scope.html" aria-current="page" class="active sidebar-link">스코프</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/studylog/js/Scope.html#렉시컬-스코프" class="sidebar-link">렉시컬 스코프</a></li><li class="sidebar-sub-header"><a href="/studylog/js/Scope.html#스코프-체인" class="sidebar-link">스코프 체인</a></li><li class="sidebar-sub-header"><a href="/studylog/js/Scope.html#함수-스코프와-블록-스코프" class="sidebar-link">함수 스코프와 블록 스코프</a></li><li class="sidebar-sub-header"><a href="/studylog/js/Scope.html#전역변수의-문제" class="sidebar-link">전역변수의 문제</a></li><li class="sidebar-sub-header"><a href="/studylog/js/Scope.html#iife-즉시-실행-함수-표현식" class="sidebar-link">IIFE (즉시 실행 함수 표현식)</a></li></ul></li><li><a href="/studylog/js/Hoisting.html" class="sidebar-link">호이스팅</a></li><li><a href="/studylog/js/This.html" class="sidebar-link">함수 호출과 This</a></li><li><a href="/studylog/js/Type.html" class="sidebar-link">타입</a></li><li><a href="/studylog/js/Coercion.html" class="sidebar-link">강제변환</a></li><li><a href="/studylog/js/Compare.html" class="sidebar-link">단축평가, 비교</a></li><li><a href="/studylog/js/Closure.html" class="sidebar-link">클로저</a></li><li><a href="/studylog/js/Prototype.html" class="sidebar-link">프로토타입</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>OOP (객체지향 프로그래밍)</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/studylog/js/FP.html" class="sidebar-link">FP (함수형 프로그래밍)</a></li><li><a href="/studylog/js/Promise.html" class="sidebar-link">프로미스</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Web API</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="스코프"><a href="#스코프" class="header-anchor">#</a> 스코프</h1> <p>스코프란 참조 대상 식별자를 찾아내는 방법에 대한 것이다.</p> <h2 id="렉시컬-스코프"><a href="#렉시컬-스코프" class="header-anchor">#</a> 렉시컬 스코프</h2> <p>스코프가 작동하는 방식에는 <strong>동적 스코프</strong>와 <strong>렉시컬(=정적) 스코프</strong>가 있다</p> <p>자바스크립트는 렉시컬 스코프를 따른다.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+  <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+</code></pre></div><ul><li><code>foo</code>에서 호출된 <code>bar()</code>는 <code>foo</code> 스코프 내의 <code>var x = 10</code>을 참조할 것 같다. 그러나 이는 동적 스코프 방식의 동작이다. 호출된 시점을 기준으로 스코프가 정해진다.</li> <li>실제로 <code>bar</code>는 상위스코프를 전역으로 가진다. 코드가 작성된 시점을 기준으로 스코프가 정해진다.</li></ul> <h2 id="스코프-체인"><a href="#스코프-체인" class="header-anchor">#</a> 스코프 체인</h2> <p>만약 참조하려는 대상이 현재의 스코프에 존재하지 않는다면 <a href="/studylog/js/ExecutionContext.html">실행컨텍스트</a>에 의해 생성된 스코프 체인을 따라 상위 스코프로 이동하여 찾는다</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token string">&quot;global&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token string">&quot;outer&quot;</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> c <span class="token operator">=</span> <span class="token string">&quot;outer&quot;</span><span class="token punctuation">;</span>
+
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">function</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> c <span class="token operator">=</span> <span class="token string">&quot;inner&quot;</span><span class="token punctuation">;</span>
+
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// global outer outer</span>
+<span class="token comment">// global outer inner</span>
+</code></pre></div><ul><li><code>outer</code>에서의 <code>console.log</code>는<br>
+전역 스코프의 <code>a</code><br> <code>outer</code> 스코프의 <code>b,c</code>를 출력한다</li> <li><code>inner</code>에서의 <code>console.log</code>는 <br>
+전역 스코프의 <code>a</code><br> <code>outer</code> 스코프의 <code>b</code><br> <code>inner</code> 스코프의 <code>c</code>를 출력한다.</li></ul> <h2 id="함수-스코프와-블록-스코프"><a href="#함수-스코프와-블록-스코프" class="header-anchor">#</a> 함수 스코프와 블록 스코프</h2> <p>자바스크립트는 기본적으로 함수 스코프를 사용한다. 함수 내에서 선언된 변수는 함수 외부에서 사용될 수 없다. 전역 스코프도 함수 스코프로써 동작한다.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token string">&quot;global scope&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token string">&quot;function scope&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token string">&quot;block scope&quot;</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// global scope</span>
+<span class="token comment">// function scope</span>
+<span class="token comment">// block scope</span>
+
+<span class="token comment">// function scope</span>
+<span class="token comment">// Uncaught ReferenceError: y is not defined</span>
+</code></pre></div><p><code>var</code> 키워드로 선언된 변수 또한 함수 스코프로 동작한다.<br> <code>let, const</code> 키워드로 선언된 변수는 블록 스코프로 동작한다.
+함수 안에서 var 키워드를 사용하지 않고 변수할당을 하면 그 변수는 전역변수가 된다.</p> <p><code>for, while, switch, if</code> 등의 코드에서 사용한 <code>var</code> 변수도 계속 남아 있게되어 변수의 스코프 문제가 발생할 수 있다. 그러니 <code>let, const</code>를 사용하자..</p> <h3 id="암묵적-전역"><a href="#암묵적-전역" class="header-anchor">#</a> 암묵적 전역</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  y <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x <span class="token operator">+</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 30</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 20</span>
+
+<span class="token keyword">delete</span> x<span class="token punctuation">;</span>
+<span class="token keyword">delete</span> y<span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 10</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Uncaught ReferenceError: y is not defined</span>
+</code></pre></div><p>함수 안에서 <code>var</code> 키워드를 사용하지 않고 변수할당을 하면 그 변수는 전역변수가 된다. 아니 전역변수처럼 동작한다. 실제로는 <code>window</code>객체의 프로퍼티로써 추가된 것이다. 그래서 <code>delete</code>를 하면 변수<code>x</code>는 삭제되지 않지만, 프로퍼티<code>y</code>는 삭제된다.</p> <h2 id="전역변수의-문제"><a href="#전역변수의-문제" class="header-anchor">#</a> 전역변수의 문제</h2> <p>전역 변수는 다음과 같은 문제들을 가진다. 그렇기에 전역변수의 사용을 억제해야 한다.</p> <ul><li>암묵적 결합</li> <li>긴 생명주기</li> <li>스코프 체인 상에서 종점에 존재 전역변수의 검색이 가장 마지막에 이뤄지기 때문에 느림</li> <li>네임스페이스 오염</li></ul> <h2 id="iife-즉시-실행-함수-표현식"><a href="#iife-즉시-실행-함수-표현식" class="header-anchor">#</a> IIFE (즉시 실행 함수 표현식)</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ReferenceError</span>
+</code></pre></div><p>모든 코드를 즉시 실행함수 표현식으로 감싸면 모든 변수는 즉시 실행 함수의 지역변수가 된다. 즉 외부에서 접근할 수 없는 scope를 형성해서 내부 변수를 private하게 만들 수 있다. 또한 전역 스코프를 오염시키지 않는다.</p> <h3 id="모듈패턴"><a href="#모듈패턴" class="header-anchor">#</a> 모듈패턴</h3> <p>모듈패턴은 클래스를 모방해서 관련있는 변수와 함수를 모아 즉시 실행함수로 감싸 하나의 모듈을 만든다.</p> <p>모듈패턴은 클로저를 기반을 동작한다. 전역변수 억제는 물론 캡슐화까지 가능하다.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> Counter <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token function">increase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token operator">++</span>num<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">decrease</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token operator">--</span>num<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Counter<span class="token punctuation">.</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined. 외부 노출 안됨</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Counter<span class="token punctuation">.</span><span class="token function">increase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Counter<span class="token punctuation">.</span><span class="token function">decrease</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+</code></pre></div><p><br><br></p> <hr> <blockquote><p><strong>Reference</strong><br> <a href="https://poiemaweb.com/js-scope" target="_blank" rel="noopener noreferrer">poiemaweb 스코프<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> <br> 러닝 자바스크립트 <br> 모던 자바스크립트 DeepDive <br> You Don't Know JS. 타입과 문법, 스코프와 클로져</p></blockquote></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">5/17/2021, 9:44:50 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/studylog/js/ExecutionContext.html" class="prev">
+        실행컨텍스트
+      </a></span> <span class="next"><a href="/studylog/js/Hoisting.html">
+        호이스팅
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.5b500d26.js" defer></script><script src="/assets/js/2.07a342a2.js" defer></script><script src="/assets/js/28.de951b5d.js" defer></script>
+  </body>
+</html>
